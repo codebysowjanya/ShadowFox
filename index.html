@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sowjanya S </title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header class="nav">
+  <div class="logo">Sowjanya S </div>
+  <nav class="nav-links">
+    <a href="#story">Story</a>
+    <a href="#skills">Skills</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="nav-actions">
+    <a href="./assets/resume.pdf.pdf" target="_blank" class="nav-btn resume">
+      Resume
+    </a>
+    <a href="https://www.linkedin.com/in/sowjanya-s-87a8b6331"
+   target="_blank"
+   class="nav-icon">
+  <i class="fab fa-linkedin"></i>
+</a>
+    <a href="https://github.com/codebysowjanya"
+       target="_blank"
+       class="nav-icon">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+</header>
+  <section class="hero">
+  <div class="hero-text">
+    <h1>Hi, I'm Sowjanya<br>a Professional Coder.</h1>
+    <p>Web Developer • UI Thinker • Problem Solver</p>
+  </div>
+  <div class="hero-image">
+    <img src="./assets/profile.jpg.jpeg"
+         alt="Sowjanya Photo"
+         onclick="openImage(this)">
+  </div>
+</section>
+  <section id="story" class="section">
+    <h2>My Story</h2>
+    <p>
+      I focus on creating simple, usable interfaces backed by clear logic.
+      I enjoy Web development, automation, and turning ideas into
+      practical digital solutions.
+    </p>
+  </section>
+  <section id="skills" class="section">
+    <h2>What I Work With</h2>
+    <div class="skills">
+      <span class="strong">HTML</span>
+      <span class="strong">CSS</span>
+      <span class="strong">JavaScript</span>
+      <span class="mid">Python</span>
+      <span class="mid">AI Automation</span>
+      <span class="learn">UI / UX</span>
+    </div>
+  </section>
+  <section id="certificates" class="section">
+  <h2>Certifications</h2>
+  <div class="cert-grid">
+    <div class="cert-card" onclick="openImage(this.querySelector('img'))">
+      <img src="./assets/certificates/ai-certificate.png.jpg" alt="AI Certificate">
+      <h3>Prompt-driven AI Workflow</h3>
+      <p>Issued by NxtWave</p>
+    </div>
+    <div class="cert-card" onclick="openImage(this.querySelector('img'))">
+      <img src="./assets/certificates/uiux-certificate.jpg.jpg" alt="UI UX Certificate">
+      <h3>UI / UX Design</h3>
+      <p>Issued by NxtWave</p>
+    </div>
+    <div class="cert-card" onclick="openImage(this.querySelector('img'))">
+      <img src="./assets/certificates/python-certificate.png.jpg" alt="Python Certificate">
+      <h3>Python Programming</h3>
+      <p>Issued by NxtWave</p>
+    </div>
+  </div>
+</section> 
+  <section id="projects" class="section">
+  <h2>Projects</h2>
+  <div class="project featured">
+    <h3>Calculator</h3>
+    <div class="project-details">
+      <p>
+        A calculator application is a software tool that helps users perform
+        basic and advanced mathematical calculations quickly and accurately.
+      </p>
+      <div class="project-buttons">
+        <a href="https://github.com/codebysowjanya/calculator-.git"
+           target="_blank"
+           class="project-link">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="project featured">
+    <h3>To-Do List App</h3>
+    <div class="project-details">
+      <p>
+        A To-Do List application helps users plan, organize, and track daily
+        tasks efficiently with a simple and intuitive interface.
+      </p>
+      <div class="project-buttons">
+        <a href="https://github.com/codebysowjanya/to-do-list.git"
+           target="_blank"
+           class="project-link">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="project featured">
+    <h3>E-commerce Website</h3>
+    <div class="project-details">
+      <p>
+        An e-commerce website allows users to browse products, add items to a
+        cart, and purchase securely through an online platform.
+      </p>
+      <div class="project-buttons">
+        <a href="https://github.com/codebysowjanya/ecommerce-website"
+           target="_blank"
+           class="project-link">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+  <section id="contact" class="section contact-section">
+  <h2>Contact Me</h2>
+  <div class="contact-wrapper">
+    <div class="contact-info">
+      <p>
+        <i class="fas fa-envelope"></i>
+        ssowjanya433@gmail.com
+      </p>
+      <p>
+        <i class="fas fa-phone"></i>
+        +91 76958 40397
+      </p>
+    </div>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="4" required></textarea>
+<button type="submit" id="sendBtn">
+  Send Message
+</button>
+      <p class="success-message">Your message has been sent successfully.</p>
+    </form>
+  </div>
+</section>
+<div class="image-modal" id="imageModal">
+  <span class="close-modal" onclick="closeImage()">×</span>
+  <img id="modalImg" src="" alt="Full View">
+</div>
+<div class="demo-modal" id="demoModal">
+  <span class="close-modal" onclick="closeDemo()">×</span>
+  <iframe id="demoFrame" src="" frameborder="0"></iframe>
+</div>
+<div id="toast" class="toast">
+  <i class="fas fa-check-circle"></i>
+  <span>Message Sent Successfully</span>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+body {
+  background: #ffffff;
+  color: #0f172a;
+  line-height: 1.8;
+}
+.nav {
+  padding: 32px 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+}
+.nav-links a {
+  margin-left: 40px;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #0f172a;
+}
+.nav-links a:hover {
+  color: #4f46e5;
+}
+.nav-actions {
+  display: flex;
+  gap: 24px;
+}
+.nav-btn.resume {
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #4f46e5;
+  color: #fff;
+  text-decoration: none;
+}
+.nav-icon {
+  font-size: 26px;
+  color: #0f172a;
+}
+.hero {
+  min-height: 90vh;
+  padding: 0 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: radial-gradient(circle at top, #eef2ff, #ffffff);
+}
+.hero h1 {
+  font-size: 64px;
+  max-width: 800px;
+}
+.hero p {
+  font-size: 22px;
+  margin-top: 20px;
+  color: #475569;
+}
+.hero-image img {
+  width: 550px;
+  height: 800px;
+  object-fit: cover;
+  border-radius: 36px;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.25);
+}
+.hero-image {
+  margin-right: 150px;   
+}
+.section {
+  width: 100%;
+  padding: 140px 140px;
+  margin: 0;
+}
+.section h2 {
+  font-size: 56px;
+  margin-bottom: 30px;
+}
+.section p {
+  font-size: 22px;
+  max-width: 1000px;
+  color: #334155;
+}
+#story p {
+  font-size: 28px;
+  font-weight: 500;
+}
+.skills {
+  margin-top: 60px;
+}
+.skills span {
+  display: inline-block;
+  padding: 18px 36px;
+  margin: 14px;
+  font-size: 20px;
+  border-radius: 40px;
+}
+.strong { background: #dbeafe; }
+.mid    { background: #e0e7ff; }
+.learn  { background: #fef3c7; }
+.cert-grid {
+  margin-top: 60px;
+  display: flex;
+  gap: 40px;
+}
+.cert-card {
+  flex: 1;
+  padding: 36px;
+  background: #f8fafc;
+  border-radius: 28px;
+  cursor: pointer;
+}
+.cert-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+.cert-card h3 {
+  font-size: 22px;
+}
+.cert-card p {
+  font-size: 18px;
+}
+.project {
+  padding: 48px;
+  margin-bottom: 30px;
+  background: #f8fafc;
+  border-radius: 28px;
+  cursor: pointer;
+}
+.project h3 {
+  font-size: 28px;
+}
+.project p {
+  font-size: 20px;
+}
+.project-link {
+  margin-top: 20px;
+  padding: 14px 26px;
+  border-radius: 30px;
+  font-size: 16px;
+  background: #0f172a;
+  color: #fff;
+  text-decoration: none;
+  display: inline-flex;
+  gap: 10px;
+}
+.project.touch-active {
+  background: #eef2ff;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.15);
+}
+.contact-info p {
+  font-size: 22px;
+}
+.contact-form {
+  max-width: 700px;
+  margin-top: 40px;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 20px;
+  font-size: 18px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.contact-form button {
+  padding: 18px 40px;
+  font-size: 18px;
+  border-radius: 14px;
+  background: #2563eb;
+  color: white;
+  border: none;
+}
+.image-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 9999;
+}
+.image-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+.image-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 20px;
+}
+.close-modal {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 44px;
+  color: white;
+  cursor: pointer;
+}
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column-reverse;
+    padding: 80px 30px;
+    text-align: center;
+  }
+  .section {
+    padding: 90px 30px;
+  }
+  .section h2 {
+    font-size: 42px;
+  }
+  .section p {
+    font-size: 20px;
+  }
+  .cert-grid {
+    flex-direction: column;
+  }
+}
+@keyframes hoverBlink {
+  0% {
+    background-color: #ffffff;
+  }
+  50% {
+    background-color: #eef2ff;
+  }
+  100% {
+    background-color: #ffffff;
+  }
+}
+.section:hover {
+  animation: hoverBlink 0.4s ease-in-out;
+}
+.project-img {
+  width: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin: 18px 0;
+  cursor: zoom-in;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+.contact-form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.project-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.project-link.demo {
+  background: #16a34a;
+}
+.contact-section {
+  background: #f8fafc;
+}
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: flex-start;
+}
+.contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 22px;
+  margin-bottom: 18px;
+  color: #0f172a;
+}
+.contact-info i {
+  font-size: 22px;
+  color: #4f46e5;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 18px 20px;
+  font-size: 18px;
+  border-radius: 14px;
+  border: 2px solid #e5e7eb;
+  margin-bottom: 20px;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #4f46e5;
+  outline: none;
+}
+.contact-form button {
+  padding: 16px 42px;
+  font-size: 18px;
+  border-radius: 30px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(79, 70, 229, 0.35);
+}
+.success-message {
+  display: none;
+  margin-top: 14px;
+  font-size: 16px;
+  color: #16a34a;
+}
+@media (max-width: 900px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+.toast {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  background: #16a34a;
+  color: white;
+  padding: 16px 22px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+  transition: all 0.4s ease;
+  z-index: 9999;
+}
+.toast i {
+  font-size: 22px;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+#sendBtn.sent {
+  background: #16a34a;         
+  cursor: not-allowed;
+  box-shadow: none;
+}
+#sendBtn.sent i {
+  margin-right: 8px;
+}
