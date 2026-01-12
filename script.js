@@ -1,39 +1,85 @@
-function openImage(img) {
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("modalImg");
-  modalImg.src = img.src;
-  modal.classList.add("active");
-  document.body.style.overflow = "hidden";
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+function addToCart(name, price) {
+  let item = cart.find(p => p.name === name);
+  if (item) {
+    item.qty++;
+  } else {
+    cart.push({ name, price, qty: 1 });
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert(name + " added to cart");
 }
-function closeImage() {
-  const modal = document.getElementById("imageModal");
-  modal.classList.remove("active");
-  document.body.style.overflow = "auto";
-}
-document.querySelectorAll(".project").forEach(project => {
-  project.addEventListener("click", () => {
-    document.querySelectorAll(".project").forEach(p =>
-      p.classList.remove("touch-active")
-    );
-    project.classList.add("touch-active");
-    project.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
+function loadCart() {
+  let cartItems = document.getElementById("cartItems");
+  let totalText = document.getElementById("total");
+  if (!cartItems) return;
+  cartItems.innerHTML = "";
+  let total = 0;
+  cart.forEach((item, index) => {
+    let itemTotal = item.price * item.qty;
+    total += itemTotal;
+    cartItems.innerHTML += `
+      <div class="cart-item">
+        <span>${item.name}</span>
+        <span>
+          <button onclick="decreaseQty(${index})">−</button>
+          ${item.qty}
+          <button onclick="increaseQty(${index})">+</button>
+        </span>
+        <span>₹${itemTotal}</span>
+      </div>
+    `;
   });
-});
-const contactForm = document.querySelector(".contact-form");
-const toast = document.getElementById("toast");
-const sendBtn = document.getElementById("sendBtn");
-contactForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-  if (sendBtn.classList.contains("sent")) return;
-  toast.classList.add("show");
-  sendBtn.classList.add("sent");
-  sendBtn.innerHTML = '<i class="fas fa-check"></i> Sent';
-  sendBtn.disabled = true;
-  contactForm.reset();
-  setTimeout(() => {
-    toast.classList.remove("show");
-  }, 3000);
-});
+  totalText.innerText = "Total: ₹" + total;
+}
+function increaseQty(index) {
+  cart[index].qty++;
+  updateCart();
+}
+function decreaseQty(index) {
+  cart[index].qty--;
+  if (cart[index].qty === 0) {
+    cart.splice(index, 1);
+  }
+  updateCart();
+}
+function updateCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+  loadCart();
+}
+loadCart();
+function filterFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get("category");
+  if (!category) return;
+  const products = document.querySelectorAll(".product-card");
+  products.forEach(product => {
+    if (product.classList.contains(category)) {
+      product.style.display = "block";
+    } else {
+      product.style.display = "none";
+    }
+  });
+}
+filterFromURL();
+function openProduct(name, price, image, desc) {
+  const product = { name, price, image, desc };
+  localStorage.setItem("selectedProduct", JSON.stringify(product));
+  window.location.href = "product.html";
+}
+function addToCart(name, price, image) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let item = cart.find(p => p.name === name);
+  if (item) {
+    item.qty += 1;
+  } else {
+    cart.push({ name, price, image, qty: 1 });
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("Added to cart!");
+}
+function openProduct(name, price, image, desc) {
+  const product = { name, price, image, desc };
+  localStorage.setItem("selectedProduct", JSON.stringify(product));
+  window.location.href = "product.html";
+}

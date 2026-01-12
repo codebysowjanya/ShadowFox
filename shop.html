@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop | ShopEase</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="navbar">
+  <div class="logo">ShopEase</div>
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html" style="font-size:22px;">🛒 Cart</a>
+  </div>
+</div>
+<h1 class="shop-title">Shop</h1>
+<div class="filters">
+  <button onclick="filterProducts('all')">All</button>
+  <button onclick="filterProducts('women')">Women</button>
+  <button onclick="filterProducts('men')">Men</button>
+  <button onclick="filterProducts('accessories')">Accessories</button>
+</div>
+<div class="shop-products">
+  <div class="product-card women" onclick="openProduct('Women Dress',2000,'images/products/women1.jpg',
+  'Premium red gown dress with soft fabric and elegant stitching. Perfect for party wear and casual outings.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Women Dress',2000,'images/products/women1.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/women1.jpg" alt="Women Dress">
+    <h3>Women Dress</h3>
+    <p>₹2000</p>
+  </div>
+  <div class="product-card women" onclick="openProduct('Kurti',1500,'images/products/women2.jpg',
+  'Stylish cotton kurti with modern design and comfortable fit. Best for daily wear and office use.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Kurti',1500,'images/products/women2.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/women2.jpg" alt="Kurti">
+    <h3>Kurti</h3>
+    <p>₹1500</p>
+  </div>
+  <div class="product-card women" onclick="openProduct('Saree',3000,'images/products/women3.jpg',
+  'Beautiful traditional saree with rich colors and premium fabric. Suitable for festivals and weddings.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Saree',3000,'images/products/women3.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/women3.jpg" alt="Saree">
+    <h3>Saree</h3>
+    <p>₹3000</p>
+  </div>
+  <div class="product-card women" onclick="openProduct('Skirt',1800,'images/products/women4.jpg',
+  'Trendy skirt with lightweight material and classy look. Easy to style with tops and jackets.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Skirt',1800,'images/products/women4.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/women4.jpg" alt="Skirt">
+    <h3>Skirt</h3>
+    <p>₹1800</p>
+  </div>
+  <div class="product-card women" onclick="openProduct('Top',1200,'images/products/women5.jpg',
+  'Elegant women top with comfortable fabric. Best match for jeans, skirts and casual wear.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Top',1200,'images/products/women5.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/women5.jpg" alt="Top">
+    <h3>Top</h3>
+    <p>₹1200</p>
+  </div>
+  <div class="product-card women" onclick="openProduct('Women Jeans',2200,'images/products/women6.jpg',
+  'High quality denim jeans with perfect stretch fit. Great for daily wear and travel.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Women Jeans',2200,'images/products/women6.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/women6.jpg" alt="Women Jeans">
+    <h3>Women Jeans</h3>
+    <p>₹2200</p>
+  </div>
+  <div class="product-card women" onclick="openProduct('Heels',2500,'images/products/women7.jpg',
+  'Fashionable heels with strong grip and comfort. Best for party wear and functions.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Heels',2500,'images/products/women7.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/women7.jpg" alt="Heels">
+    <h3>Heels</h3>
+    <p>₹2500</p>
+  </div>
+  <div class="product-card women" onclick="openProduct('Handbag',2800,'images/products/women8.jpg',
+  'Stylish handbag with premium look and spacious design. Perfect for shopping and office use.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Handbag',2800,'images/products/women8.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/women8.jpg" alt="Handbag">
+    <h3>Handbag</h3>
+    <p>₹2800</p>
+  </div>
+  <div class="product-card women" onclick="openProduct('Women Jacket',3200,'images/products/women9.jpg',
+  'Winter jacket with warm lining and trendy look. Suitable for cold weather outfits.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Women Jacket',3200,'images/products/women9.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/women9.jpg" alt="Women Jacket">
+    <h3>Women Jacket</h3>
+    <p>₹3200</p>
+  </div>
+  <div class="product-card women" onclick="openProduct('Sandals',1600,'images/products/women10.jpg',
+  'Comfortable sandals with soft sole and durable straps. Best for daily use.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Sandals',1600,'images/products/women10.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/women10.jpg" alt="Sandals">
+    <h3>Sandals</h3>
+    <p>₹1600</p>
+  </div>
+  <div class="product-card men" onclick="openProduct('Men Shirt',1500,'images/products/men1.jpg',
+  'Classic men shirt with premium cotton fabric and perfect fit. Suitable for office and casual wear.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Men Shirt',1500,'images/products/men1.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/men1.jpg" alt="Men Shirt">
+    <h3>Men Shirt</h3>
+    <p>₹1500</p>
+  </div>
+  <div class="product-card men" onclick="openProduct('T-Shirt',1000,'images/products/men2.jpg',
+  'Soft and comfortable t-shirt with modern design. Best for daily casual wear.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('T-Shirt',1000,'images/products/men2.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/men2.jpg" alt="T-Shirt">
+    <h3>T-Shirt</h3>
+    <p>₹1000</p>
+  </div>
+  <div class="product-card men" onclick="openProduct('Men Jeans',2200,'images/products/men3.jpg',
+  'Premium denim jeans with strong stitching and stylish look. Perfect match for daily outfits.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Men Jeans',2200,'images/products/men3.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/men3.jpg" alt="Men Jeans">
+    <h3>Men Jeans</h3>
+    <p>₹2200</p>
+  </div>
+  <div class="product-card men" onclick="openProduct('Men Jacket',3500,'images/products/men4.jpg',
+  'Warm men jacket with premium finishing. Best for winter wear and travel.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Men Jacket',3500,'images/products/men4.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/men4.jpg" alt="Men Jacket">
+    <h3>Men Jacket</h3>
+    <p>₹3500</p>
+  </div>
+  <div class="product-card men" onclick="openProduct('Shoes',3000,'images/products/men5.jpg',
+  'Durable shoes with strong sole and comfort padding. Suitable for formal and casual use.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Shoes',3000,'images/products/men5.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/men5.jpg" alt="Shoes">
+    <h3>Shoes</h3>
+    <p>₹3000</p>
+  </div>
+  <div class="product-card men" onclick="openProduct('Formal Pants',2400,'images/products/men6.jpg',
+  'Premium formal pants with smooth fabric and perfect stitching. Best for office wear.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Formal Pants',2400,'images/products/men6.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/men6.jpg" alt="Formal Pants">
+    <h3>Formal Pants</h3>
+    <p>₹2400</p>
+  </div>
+  <div class="product-card men" onclick="openProduct('Hoodie',2800,'images/products/men7.jpg',
+  'Comfortable hoodie with soft inside lining. Great for winter and casual style.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Hoodie',2800,'images/products/men7.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/men7.jpg" alt="Hoodie">
+    <h3>Hoodie</h3>
+    <p>₹2800</p>
+  </div>
+  <div class="product-card men" onclick="openProduct('Blazer',4200,'images/products/men8.jpg',
+  'Premium blazer with stylish finishing. Suitable for interviews and formal events.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Blazer',4200,'images/products/men8.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/men8.jpg" alt="Blazer">
+    <h3>Blazer</h3>
+    <p>₹4200</p>
+  </div>
+  <div class="product-card men" onclick="openProduct('Shorts',1300,'images/products/men9.jpg',
+  'Lightweight shorts with comfortable fit. Best for gym, sports and casual home wear.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Shorts',1300,'images/products/men9.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/men9.jpg" alt="Shorts">
+    <h3>Shorts</h3>
+    <p>₹1300</p>
+  </div>
+  <div class="product-card men" onclick="openProduct('Sports Shoes',3600,'images/products/men10.jpg',
+  'High grip sports shoes with flexible sole and comfort padding. Perfect for running and training.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Sports Shoes',3600,'images/products/men10.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/men10.jpg" alt="Sports Shoes">
+    <h3>Sports Shoes</h3>
+    <p>₹3600</p>
+  </div>
+  <div class="product-card accessories" onclick="openProduct('Watch',3000,'images/products/acc1.jpg',
+  'Premium stylish wrist watch with elegant dial and strong strap. Suitable for all occasions.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Watch',3000,'images/products/acc1.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/acc1.jpg" alt="Watch">
+    <h3>Watch</h3>
+    <p>₹3000</p>
+  </div>
+  <div class="product-card accessories" onclick="openProduct('Sunglasses',1500,'images/products/acc2.jpg',
+  'UV protected sunglasses with stylish frame. Perfect for travel and outdoor use.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Sunglasses',1500,'images/products/acc2.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/acc2.jpg" alt="Sunglasses">
+    <h3>Sunglasses</h3>
+    <p>₹1500</p>
+  </div>
+  <div class="product-card accessories" onclick="openProduct('Wallet',1200,'images/products/acc3.jpg',
+  'Durable wallet with premium look and multiple compartments. Perfect for daily carry.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Wallet',1200,'images/products/acc3.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/acc3.jpg" alt="Wallet">
+    <h3>Wallet</h3>
+    <p>₹1200</p>
+  </div>
+  <div class="product-card accessories" onclick="openProduct('Hand Belt',900,'images/products/acc4.jpg',
+  'High quality belt with stylish buckle and strong finish. Suitable for jeans and formals.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Hand Belt',900,'images/products/acc4.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/acc4.jpg" alt="Hand Belt">
+    <h3>Hand Belt</h3>
+    <p>₹900</p>
+  </div>
+  <div class="product-card accessories" onclick="openProduct('Cap',800,'images/products/acc5.jpg',
+  'Trendy cap with adjustable strap and comfortable fabric. Perfect for sports and casual use.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Cap',800,'images/products/acc5.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/acc5.jpg" alt="Cap">
+    <h3>Cap</h3>
+    <p>₹800</p>
+  </div>
+  <div class="product-card accessories" onclick="openProduct('Backpack',2500,'images/products/acc6.jpg',
+  'Spacious backpack with stylish design and strong zips. Best for college and travel.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Backpack',2500,'images/products/acc6.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/acc6.jpg" alt="Backpack">
+    <h3>Backpack</h3>
+    <p>₹2500</p>
+  </div>
+  <div class="product-card accessories" onclick="openProduct('Bracelet',700,'images/products/acc7.jpg',
+  'Elegant bracelet with premium finish. Suitable for daily wear and gifting.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Bracelet',700,'images/products/acc7.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/acc7.jpg" alt="Bracelet">
+    <h3>Bracelet</h3>
+    <p>₹700</p>
+  </div>
+  <div class="product-card accessories" onclick="openProduct('Necklace',1800,'images/products/acc8.jpg',
+  'Beautiful necklace with premium design and shining finish. Perfect for parties and functions.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Necklace',1800,'images/products/acc8.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/acc8.jpg" alt="Necklace">
+    <h3>Necklace</h3>
+    <p>₹1800</p>
+  </div>
+  <div class="product-card accessories" onclick="openProduct('Ring',1100,'images/products/acc9.jpg',
+  'Stylish ring with premium shine and comfortable fit. Suitable for gifting and daily use.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Ring',1100,'images/products/acc9.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/acc9.jpg" alt="Ring">
+    <h3>Ring</h3>
+    <p>₹1100</p>
+  </div>
+  <div class="product-card accessories" onclick="openProduct('Perfume',2600,'images/products/acc10.jpg',
+  'Long lasting perfume with premium fragrance. Perfect for daily use and special events.')">
+    <button class="cart-fab" onclick="event.stopPropagation(); addToCart('Perfume',2600,'images/products/acc10.jpg')" title="Add to cart">🛒</button>
+    <img src="images/products/acc10.jpg" alt="Perfume">
+    <h3>Perfume</h3>
+    <p>₹2600</p>
+  </div>
+</div>
+<script>
+function filterProducts(category) {
+  document.querySelectorAll(".product-card").forEach(card => {
+    card.style.display =
+      category === "all" || card.classList.contains(category)
+      ? "block" : "none";
+  });
+}
+</script>
+<script src="script.js"></script>
+</body>
+</html>

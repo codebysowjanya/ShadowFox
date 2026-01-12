@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Details | ShopEase</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="navbar">
+  <div class="logo">ShopEase</div>
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="cart.html">🛒 Cart</a>
+  </div>
+</div>
+<div class="breadcrumb">
+  <a href="index.html">Home</a> ›
+  <a href="shop.html">Shop</a> ›
+  <span id="breadcrumb-name"></span>
+</div>
+<div class="product-details">
+  <img id="product-img" alt="Product Image">
+  <div class="product-info">
+    <h1 id="product-name"></h1>
+    <h2 id="product-price"></h2>
+    <p class="product-desc">
+    </p>
+    <div id="size-section">
+      <h3>Select Size</h3>
+      <div class="sizes" id="size-buttons"></div>
+    </div>
+    <h3>Quantity</h3>
+    <div class="qty-box">
+      <button onclick="changeQty(-1)">−</button>
+      <span id="qty">1</span>
+      <button onclick="changeQty(1)">+</button>
+    </div>
+    <button id="add-cart-btn">Add to Cart</button>
+  </div>
+</div>
+<div id="toast"></div>
+<script src="product.js"></script>
+</body>
+</html>
