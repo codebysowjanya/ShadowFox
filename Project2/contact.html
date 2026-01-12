@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us | ShopEase</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top-bar">
+  Free shipping on all orders over ₹500
+</div>
+<div class="navbar">
+  <div class="logo">ShopEase</div>
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">🛒 Cart</a>
+  </div>
+</div>
+<<div class="contact-container">
+  <h1>Contact Us</h1>
+  <p>Have a question? We’re here to help.</p>
+<div class="map-container">
+  <iframe
+    src="https://www.google.com/maps?q=Chennai&t=&z=13&ie=UTF8&iwloc=&output=embed"
+    allowfullscreen
+    loading="lazy">
+  </iframe>
+</div>
+  <div class="contact-info">
+  <div class="info-item">
+    <span class="icon">📞</span>
+    <span>+91 98765 43210</span>
+  </div>
+  <div class="info-item">
+    <span class="icon">📧</span>
+    <span>support@myshop.com</span>
+  </div>
+  <div class="info-item">
+    <span class="icon">📍</span>
+    <span>Chennai, Tamil Nadu, India</span>
+  </div>
+</div>
+  <form class="contact-form" onsubmit="showMessage(event)">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <p id="successMsg" style="color:green; display:none; margin-top:15px;">
+    ✅ Message sent successfully!
+  </p>
+</div>
+<footer>
+  © 2025 MyShop. All Rights Reserved.
+</footer>
+<script>
+  function showMessage(event) {
+    event.preventDefault(); // stop page reload
+    document.getElementById("successMsg").style.display = "block";
+  }
+</script>
+</body>
+</html>
